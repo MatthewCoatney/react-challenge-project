@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loginUser } from "../../../redux/actions/authActions";
+import { Link } from "react-router-dom";
 
 const mapActionsToProps = (dispatch) => ({
   commenceLogin(email, password) {
@@ -30,6 +31,11 @@ class LoginForm extends Component {
   render() {
     return (
       <form>
+        <Link to={"/order"} className="nav-link">
+          <div className="nav-link-style">
+            <label className="nav-label">Order Form</label>
+          </div>
+        </Link>
         <div className="form-group">
           <label htmlFor="inputEmail">Email</label>
           <input
